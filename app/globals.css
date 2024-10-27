@@ -41,6 +41,7 @@ a {
   }
 }
 .nav {margin:200px;background-color: red;}
+.nav li {padding:100px 0}
 
 .contents {
   display: flex;
