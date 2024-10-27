@@ -41,3 +41,11 @@ a {
   }
 }
 .nav {margin:200px;background-color: red;}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-height: 100svh;
+  padding: 80px;
+}

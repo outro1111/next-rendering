@@ -1,6 +1,6 @@
 export default function isr() {
   return (
-    <div>
+    <div className="contents">
       <h2>Incremental Static Regeneration</h2>
     </div>
   )
