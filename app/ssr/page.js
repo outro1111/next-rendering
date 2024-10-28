@@ -1,11 +1,19 @@
-export default async function ssr() {
-  const res = await fetch('https://fakestoreapi.com/products/1')
-  const data = await res.json()
+async function getPosts() {
+  const res = await fetch('https://fakestoreapi.com/products')
+  return res.json()
+}
 
+export default async function ssrPage() {
+  const posts = await getPosts();
   return (
     <div className="contents">
-      <h2>Server Side Rendering</h2>
-      <p>{ data.title }</p>
+      <h2>Server Side Rendering {new Date().toLocaleTimeString()}</h2>
+      {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
     </div>
   )
 }
