@@ -1,5 +1,5 @@
 async function getPosts() {
-  const res = await fetch('https://fakestoreapi.com/products', { next: { revalidate: 30 } })
+  const res = await fetch('https://fakestoreapi.com/products')
   return res.json()
 }
 
