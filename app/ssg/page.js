@@ -3,17 +3,6 @@ async function getPosts() {
   return res.json()
 }
 
-// export async function generateStaticParams() {
-//   return []
-// }
-
-export async function generateStaticParams() {
-  const posts = await getData();
-  return posts.map((post) => ({
-    id: post.id,
-  }));
-}
-
 export default async function ssgPage() {
   const posts = await getPosts()
   return (
